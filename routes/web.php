@@ -18,15 +18,27 @@ Route::get('/', function () {
 });
 
 
-Route::get('/pizzas', function () {
+Route::get('/pizzas1', function () {
     //get data drom database and pass the datas as an array into the view
     $pizza = [
         'type' => 'hawaiian',
-        'base' => 'cheesy crust',
+        'base' => 'garlic crust',
         'price' => 10 
     ];
-    return view('pizzas', $pizza);
+    return view('pizzas1', $pizza);
 
     //return 'pizzas';
     //return ['name' => 'veg pizza', 'base' => 'classic'];
+});
+
+
+Route::get('/pizzas2', function () {
+    $pizzas = [
+        ['type' => 'hawaiian', 'base' => 'cheesy crust'],
+        ['type' => 'volcano', 'base' => 'garlic crust'],
+        ['type' => 'veg supreme', 'base' => 'thin & crispy']
+    ];
+
+                            //blade var name => var name here
+    return view('pizzas2', ['pizzasss' => $pizzas]);
 });
