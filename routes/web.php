@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/pizzas1', function () {
+/*Route::get('/pizzas1', function () {
     //get data drom database and pass the datas as an array into the view
     $pizza = [
         'type' => 'hawaiian',
@@ -29,16 +29,10 @@ Route::get('/pizzas1', function () {
 
     //return 'pizzas';
     //return ['name' => 'veg pizza', 'base' => 'classic'];
-});
+});*/
 
 
-Route::get('/pizzas2', function () {
-    $pizzas = [
-        ['type' => 'hawaiian', 'base' => 'cheesy crust'],
-        ['type' => 'volcano', 'base' => 'garlic crust'],
-        ['type' => 'veg supreme', 'base' => 'thin & crispy']
-    ];
+//The actions are in the Http >> Controllers >> PizzaController.php (the second reference tells the controller and the exact action)
+Route::get('/pizzas', 'PizzaController@index');
 
-                            //blade var name => var name here
-    return view('pizzas2', ['pizzasss' => $pizzas]);
-});
+Route::get('/pizzas/{id}', 'PizzaController@show');
