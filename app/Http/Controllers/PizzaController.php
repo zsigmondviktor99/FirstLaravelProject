@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 //php artisan make:contoller PizzaController
 class PizzaController extends Controller
 {
+    //XAMPP start apache and mysql >> mysql -u root >> create database pizzahouse; >> .env >> DB_DATABASE=dbname
+    //Also you can create new username and password there (DB_USERNAME=root, DB_PASSWORD=)
+    //You can check things ing PHP MyAdmin
     public function index(){
         //get data from db
         $pizzas = [
