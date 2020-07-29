@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Pizza;
 
-//php artisan make:contoller PizzaController
+//php artisan make:controller PizzaController
 class PizzaController extends Controller
 {
     //XAMPP start apache and mysql >> mysql -u root >> create database pizzahouse; >> .env >> DB_DATABASE=dbname
