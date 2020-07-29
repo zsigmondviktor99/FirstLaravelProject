@@ -8,7 +8,7 @@
             Pizza List
         </div>
 
-        <p>{{ $nameee }} - {{ $ageee }}</p>
+        <!--<p>{ $name } - { $age }</p>-->
 
         <!--
             Data from the web.php >> the array's key is 'type', and we will get the value
@@ -24,10 +24,11 @@
             @for($i = 0; $i < 5; $i++)
                 <p>The value of i is {{ $i }}</p>
             @endfor
-            -->
-            @for($i = 0; $i < count($pizzasss); $i++)
-                <p>{{ $pizzasss[$i]['type'] }}</p>
+            
+            @for($i = 0; $i < count($pizzas); $i++)
+                <p>{{ $pizzas[$i]['type'] }}</p>
             @endfor
+            -->
         
             <br>
 
@@ -36,11 +37,11 @@
                 Foreach loop:
             </h3>
             
-        @foreach($pizzasss as $p)
+        @foreach($pizzas as $p)
             <div>
-               {{ $loop->index }}.: {{ $p['type'] }} - {{ $p['base'] }} - {{ $p['price'] }}
+               <!--{{ $loop->index }}.: {{ $p['type'] }} - {{ $p['base'] }} - {{ $p['price'] }}
 
-                <!--Blade if-->
+                Blade if
                 @if($p['price'] > 15)
                     <p>This pizza is expensive</p>
                 @elseif($p['price'] < 5)
@@ -56,20 +57,22 @@
                     <span> - last in the loop</span>
                @endif
 
-                <!--If this is FALSE, it will executa the code >> 'opposite if'-->
+                If this is FALSE, it will executa the code >> 'opposite if'
                 @unless($p['base'] == 'cheesy crust')
                     <p>You don't have a cheesy crust</p>
-                @endunless
+                @endunless-->
+
+                {{ $p->name }} - {{ $p->type }} - {{ $p->base }}
 
                 <br><br>
             </div>
         @endforeach 
 
-        <!--Normal PHP-->
+        <!--Normal PHP
          @php
             $name = 'shaun';
              echo $name;
-         @endphp
+         @endphp-->
     </div>
 </div>
 @endsection
