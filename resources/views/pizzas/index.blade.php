@@ -16,11 +16,11 @@
             Blade sintax makes coding easier >> laravel compile Blade sintax into regular HTML and shows it for the user
         -->
 
-        <!--Blade for loop-->
+        <!--Blade for loop
             <h3>
                 For loop:
             </h3>
-            <!--
+
             @for($i = 0; $i < 5; $i++)
                 <p>The value of i is {{ $i }}</p>
             @endfor
@@ -28,14 +28,15 @@
             @for($i = 0; $i < count($pizzas); $i++)
                 <p>{{ $pizzas[$i]['type'] }}</p>
             @endfor
-            -->
+        -->
         
             <br>
 
-        <!--Blade foreach-->
+        <!--Blade foreach
             <h3>
                 Foreach loop:
             </h3>
+        -->
             
         @foreach($pizzas as $p)
             <div>

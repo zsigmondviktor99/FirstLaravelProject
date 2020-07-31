@@ -20,6 +20,13 @@
         <div class="title m-b-md">
             The North's Best Pizzas
         </div>
+
+        <!--
+            Csak akkor látjuk, ha a formról jövünk (create.blade.php)
+            Ez az adat 'JÖN' az adattal (a pizzarendeléssel)
+        -->
+        <p class="mssg">{{ session('mssg') }}</p>
+        <a href="/pizzas/create">Order a Pizza</a>
     </div>
 </div>
 @endsection

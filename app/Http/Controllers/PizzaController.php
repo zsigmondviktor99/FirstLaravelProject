@@ -30,7 +30,7 @@ class PizzaController extends Controller
         //$age = request('age');
     
         //blade var name => var name here
-        return view('pizzas', [
+        return view('pizzas.index', [
             'pizzas' => $pizzas,
             /*'name' => request('name'),
             'age' => request('age')*/
@@ -39,6 +39,35 @@ class PizzaController extends Controller
 
     public function show($id){
         //use the $id variable to query the db for a record
-        return view('details', ['id' => $id]);
+        //return view('pizzas.show', ['id' => $id]);
+
+        //findOrFail --> if there is a correct id, it is okay, if not, error page, not timeout
+        $pizza = Pizza::findOrFail($id);
+        return view('pizzas.show', ['onePizza' => $pizza]);
+    }
+
+    public function create(){
+        return view('pizzas.create');
+    }
+
+    public function store(){
+        /*error_log(request('name')); //the 'name' valued name attribute from create.blade.php will be shown in the terminal
+        error_log(request('type'));
+        error_log(request('base'));*/
+
+        //Pizza MODEL példány eltárolva egy változóba, így rakjuk az ab-ba
+        $pizza = new Pizza();
+
+        $pizza->name = request('name');
+        $pizza->type = request('type');
+        $pizza->base = request('base');
+
+        //error_log($pizza);
+
+        $pizza->save(); //elmentjük a $pizza változót az adatbázisba (a $pizza a Pizza egy példánya, ezért működik a megfelelő adatbázissal)
+
+        //Az adat ezzel fog érkezni a /pizzas főoldalra, ahol ezt tudjuk majd használni >> with
+        return redirect('/')->with('mssg', 'Thanks for your order'); //go back to homepage
+        //on Create view >> @csrf TO MAKE IT WORK WITH SAFE
     }
 }
