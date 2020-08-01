@@ -63,7 +63,7 @@
                     <p>You don't have a cheesy crust</p>
                 @endunless-->
 
-                {{ $p->name }} - {{ $p->type }} - {{ $p->base }}
+               {{ $p->id }}  - {{ $p->name }} - {{ $p->type }} - {{ $p->base }}
 
                 <br><br>
             </div>

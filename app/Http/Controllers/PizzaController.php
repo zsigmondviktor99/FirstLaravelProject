@@ -23,7 +23,8 @@ class PizzaController extends Controller
         //$pizzas = Pizza::all(); //all of the records from Pizza MODEL
         //$pizzas = Pizza::orderBy('name', 'desc')->get(); //::all() contains get(), but here we need it
         //$pizzas = Pizza::where('type', 'hawaiian')->get();
-        $pizzas = Pizza::latest()->get();   //latest by "created_at" field
+        //$pizzas = Pizza::latest()->get();   //latest by "created_at" field
+        $pizzas= Pizza::orderBy('id')->get();
 
         //given by URL parameter
         //$name = request('name');
