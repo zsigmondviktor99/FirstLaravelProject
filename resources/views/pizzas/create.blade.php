@@ -39,6 +39,20 @@
             <option value="thick">Thick</option>
         </select>
 
+        <fieldset>
+            <label>Extra toppings:</label><br>
+
+            <!--
+                - Name attribútummal hivatkozunk a controllerben
+                - Ha ezt beklikkelik, a mushrooms hozzáadódik a tömbhöz majd
+                - []! >> tömbként kezelje
+            -->
+            <input type="checkbox" name="toppings[]" value="mushrooms">Mushrooms  <br>
+            <input type="checkbox" name="toppings[]" value="peppers">Peppers  <br>
+            <input type="checkbox" name="toppings[]" value="garlic">Garlic  <br>
+            <input type="checkbox" name="toppings[]" value="olives">Olives  <br>
+        </fieldset>
+
         <input type="submit" value="Order Pizza" name="order" id="order">
     </form>
 </div>

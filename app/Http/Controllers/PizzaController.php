@@ -62,6 +62,7 @@ class PizzaController extends Controller
         $pizza->name = request('name');
         $pizza->type = request('type');
         $pizza->base = request('base');
+        $pizza->toppings = request('toppings');
 
         //error_log($pizza);
 
@@ -70,5 +71,12 @@ class PizzaController extends Controller
         //Az adat ezzel fog érkezni a /pizzas főoldalra, ahol ezt tudjuk majd használni >> with
         return redirect('/')->with('mssg', 'Thanks for your order'); //go back to homepage
         //on Create view >> @csrf TO MAKE IT WORK WITH SAFE
+    }
+
+    public function destroy($id){
+        $pizza = Pizza::findOrFail($id);
+        $pizza->delete();
+
+        return redirect('/pizzas');
     }
 }

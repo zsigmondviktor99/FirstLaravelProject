@@ -20,6 +20,9 @@ class CreatePizzasTable extends Migration
             $table->string('type');
             $table->string('base');
             $table->string('name');
+
+            //Toppings >> feltétek >> tömb
+            $table->json('toppings');   //MySQL nem tud tömböket tárolni, de JSON stringeket igen
         });
     }
 

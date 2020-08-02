@@ -37,3 +37,4 @@ Route::get('/pizzas', 'PizzaController@index');
 Route::get('/pizzas/create', 'PizzaController@create');     //You have to put this route before the {id} one, becaouse if not, the create word will be the ID --> wrong view
 Route::post('/pizzas', 'PizzaController@store');
 Route::get('/pizzas/{id}', 'PizzaController@show');
+Route::delete('/pizzas/{id}', 'PizzaController@destroy');
