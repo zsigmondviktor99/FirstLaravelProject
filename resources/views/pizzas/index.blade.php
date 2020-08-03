@@ -1,12 +1,9 @@
 <!--Views >> layouts >> layout-->
-@extends('layouts.layout')
+@extends('layouts.app')
 
 @section('content')
-<div class="flex-center position-ref full-height">
-    <div class="content">
-        <div class="title m-b-md">
-            Pizza List
-        </div>
+    <div class="wrapper pizza-index">
+        <h1>Pizza Orders</h1>
 
         <!--<p>{ $name } - { $age }</p>-->
 
@@ -39,7 +36,7 @@
         -->
             
         @foreach($pizzas as $p)
-            <div>
+            <div class="pizza-item">
                <!--{{ $loop->index }}.: {{ $p['type'] }} - {{ $p['base'] }} - {{ $p['price'] }}
 
                 Blade if
@@ -63,11 +60,16 @@
                     <p>You don't have a cheesy crust</p>
                 @endunless-->
 
-               {{ $p->id }}  - {{ $p->name }} - {{ $p->type }} - {{ $p->base }}
+                <img src="/img/pizza.png" alt="pizza icon">
+               <h4>
+                   <a href="/pizzas/{{ $p->id }}">{{ $p->id }}  - {{ $p->name }}</a>
+               </h4>
 
                 <br><br>
             </div>
         @endforeach 
+
+        <a href="/" class="back"><-- Back to main menu</a>
 
         <!--Normal PHP
          @php
@@ -75,5 +77,4 @@
              echo $name;
          @endphp-->
     </div>
-</div>
 @endsection

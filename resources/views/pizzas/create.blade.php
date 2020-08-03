@@ -1,5 +1,5 @@
 <!--Views >> layouts >> layout-->
-@extends('layouts.layout')
+@extends('layouts.app')
 
 @section('content')
 <div class="wrapper create-pizza">
@@ -55,5 +55,7 @@
 
         <input type="submit" value="Order Pizza" name="order" id="order">
     </form>
+
 </div>
+<a href="/" class="back"><-- Back to main menu</a>
 @endsection

@@ -26,7 +26,8 @@
             Ez az adat 'JÖN' az adattal (a pizzarendeléssel)
         -->
         <p class="mssg">{{ session('mssg') }}</p>
-        <a href="/pizzas/create">Order a Pizza</a>
+                <!--/pizzas/create helyett, web.php route nevek-->
+        <a href="{{ route('pizzas.create') }}">Order a Pizza</a><br>
     </div>
 </div>
 @endsection

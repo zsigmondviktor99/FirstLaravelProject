@@ -8,6 +8,11 @@ use App\Pizza;
 //php artisan make:controller PizzaController
 class PizzaController extends Controller
 {
+    /*PizzaController által vezérelt route-oknál BE KELL LÉPNI
+    public function __construct(){
+        $this->middleware('auth');
+    }*/
+
     //XAMPP start apache and mysql >> mysql -u root >> create database pizzahouse; >> .env >> DB_DATABASE=dbname
     //Also you can create new username and password there (DB_USERNAME=root, DB_PASSWORD=)
     //You can check things ing PHP MyAdmin
